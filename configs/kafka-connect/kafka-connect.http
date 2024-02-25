@@ -1,0 +1,17 @@
+### Register MySQL Source Connector
+POST http://localhost:28083/connectors
+Content-Type: application/json
+
+< ./mysql-source-connector.json
+
+### Register MySQL Avro Source Connector
+POST http://localhost:28083/connectors
+Content-Type: application/json
+
+< ./mysql-avro-source-connector.json
+
+### Register MongoDB Sink Connector
+POST http://localhost:28083/connectors
+Content-Type: application/json
+
+< ./mongo-sink-connector.json
