@@ -1,0 +1,16 @@
+{
+  "name": "mysql-json-source-connector",
+  "config": {
+    "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+    "database.hostname": "mysql",
+    "database.port": "3306",
+    "database.user": "USERNAME",
+    "database.password": "PASSWORD",
+    "database.server.id": "202402241945",
+    "database.include.list": "DBNAME",
+    "include.schema.changes": "true",
+    "schema.history.internal.kafka.bootstrap.servers": "kafka:29092",
+    "schema.history.internal.kafka.topic": "mysql.schema.history.json",
+    "topic.prefix": "cdc.json"
+  }
+}

@@ -1,22 +1,20 @@
 {
   "name": "mysql-avro-source-connector",
   "config": {
-      "connector.class": "io.debezium.connector.mysql.MySqlConnector",
-      "config.providers" : "file",
-      "config.providers.file.class" : "org.apache.kafka.common.config.provider.FileConfigProvider",
-      "database.hostname": "mysql",
-      "database.port": "3306",
-      "database.user": "${file:/secrets/env.properties:MYSQL_USER}",
-      "database.password": "${file:/secrets/env.properties:MYSQL_PASSWORD}",
-      "database.server.id": "202402241945",
-      "database.include.list": "${file:/secrets/env.properties:MYSQL_DATABASE}",
-      "include.schema.changes": "true",
-      "schema.history.internal.kafka.bootstrap.servers": "kafka:29092",
-      "schema.history.internal.kafka.topic": "mysql.schema.history",
-      "key.converter": "io.confluent.connect.avro.AvroConverter",
-      "key.converter.schema.registry.url": "http://schema-registry:8085",
-      "value.converter": "io.confluent.connect.avro.AvroConverter",
-      "value.converter.schema.registry.url": "http://schema-registry:8085",
-      "topic.prefix": "cdc"
+    "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+    "database.hostname": "mysql",
+    "database.port": "3306",
+    "database.user": "USERNAME",
+    "database.password": "PASSWORD",
+    "database.server.id": "202402241945",
+    "database.include.list": "DBNAME",
+    "include.schema.changes": "true",
+    "schema.history.internal.kafka.bootstrap.servers": "kafka:29092",
+    "schema.history.internal.kafka.topic": "mysql.schema.history.avro",
+    "key.converter": "io.confluent.connect.avro.AvroConverter",
+    "key.converter.schema.registry.url": "http://schema-registry:8085",
+    "value.converter": "io.confluent.connect.avro.AvroConverter",
+    "value.converter.schema.registry.url": "http://schema-registry:8085",
+    "topic.prefix": "cdc.avro"
   }
 }

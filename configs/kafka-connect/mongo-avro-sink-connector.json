@@ -1,0 +1,16 @@
+{
+  "name": "mongo-avro-sink-connector",
+  "config":{
+    "connector.class": "com.mongodb.kafka.connect.MongoSinkConnector",
+    "connection.uri": "mongodb://USERNAME:PASSWORD@mongo:27017",
+    "key.converter": "io.confluent.connect.avro.AvroConverter",
+    "key.converter.schema.registry.url": "http://schema-registry:8085",
+    "key.converter.schemas.enable": true,
+    "value.converter": "io.confluent.connect.avro.AvroConverter",
+    "value.converter.schema.registry.url": "http://schema-registry:8085",
+    "value.converter.schemas.enable": true,
+    "database": "DBNAME",
+    "topics.regex": "cdc\\.avro\\..*",
+    "change.data.capture.handler": "com.mongodb.kafka.connect.sink.cdc.debezium.rdbms.mysql.MysqlHandler"
+  }
+}
